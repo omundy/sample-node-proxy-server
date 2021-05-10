@@ -3,7 +3,10 @@
  */
 
 // require main app and port (using destructuring)
-const [app, port] = require('./app');
+const [app, _port] = require('./app');
+
+// set port (required for heroku, which sets own port)
+const port = process.env.PORT || _port;
 
 // HTTPS dependencies
 const https = require('https');
