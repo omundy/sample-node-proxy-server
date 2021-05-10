@@ -10,11 +10,10 @@ const app = express();
 const port = 3000;
 
 // set a whole project directory as public
-app.use(express.static('./public')); // this parent directory
-// app.use(express.static('../../../learn-javascript/')); // to test another project
+app.use(express.static('./public'));
 
-
-app.get('/', (req, res) => {
+// test route 
+app.get('/hello', (req, res) => {
 	res.send("Hello world!");
 });
 
