@@ -26,6 +26,10 @@ const endpoints = {
 		url: 'https://owenmundy.com',
 		type: 'text'
 	},
+	catfact: {
+		url: 'https://cat-fact.herokuapp.com/facts/random',
+		type: 'json'
+	},
 	satellites: {
 		url: 'https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/90/ANY/&apiKey=XFR4Y5-ULWYWF-H64T3J-4OKO',
 		type: 'json'
@@ -44,7 +48,7 @@ app.get('/proxy/:key?', (req, res) => {
 			return apiResponse.text();
 		})
 		.then(text => {
-			console.log("text =", text);
+			// console.log("text =", text);
 			if (endpoints[req.params.key].type === "json") {
 				// convert the API response string to JSON
 				let json = JSON.parse(text);
