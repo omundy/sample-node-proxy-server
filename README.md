@@ -12,6 +12,13 @@ Demonstrates:
 - An example Node/Express app that runs on Heroku (requirements: Procfile, export app, etc.)
 
 
+### Republish on Heroku
+
+1. Commit code
+1. Run `git push heroku main`
+1. Run `heroku open`
+
+
 
 ## References
 

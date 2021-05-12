@@ -10,9 +10,9 @@ fetch('https://sample-node-proxy-server.herokuapp.com/proxy/satellites')
 	.then(str => {
 		// console.log(str); // text string
 		let json = JSON.parse(str); // convert to JSON
-		console.log(`fetch #2 => json.info.satcount = ${json.info.satcount}`); // log # satellites
+		console.log(`⓵ fetch #1 => json.info.satcount = ${json.info.satcount}`); // log # satellites
 	})
-	.catch(err => console.error("fetch #1", err));
+	.catch(err => console.error("⓵ fetch #1", err));
 
 // fetch #2
 fetch('/proxy/satellites')
@@ -20,6 +20,6 @@ fetch('/proxy/satellites')
 	.then(str => {
 		// console.log(str); // text string
 		let json = JSON.parse(str); // convert to JSON
-		console.log(`fetch #2 => json.info.satcount = ${json.info.satcount}`); // log # satellites
+		console.log(`⓶ fetch #2 => json.info.satcount = ${json.info.satcount}`); // log # satellites
 	})
-	.catch(err => console.error("fetch #2", err));
+	.catch(err => console.error("⓶ fetch #2", err));
