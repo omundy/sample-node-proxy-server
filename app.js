@@ -7,12 +7,11 @@ const express = require('express');
 const nodeFetch = require('node-fetch');
 const path = require('path');
 const app = express();
-const port = 3000;
 
 // set a whole project directory as public
 app.use(express.static('./public'));
 
-// test route 
+// test route
 app.get('/hello', (req, res) => {
 	res.send("Hello world!");
 });
@@ -69,5 +68,5 @@ app.get('/proxy/:key?', (req, res) => {
 });
 
 
-// export app for server, server-http, heroku, etc.
-module.exports = [app, port];
+// export app
+module.exports = app;

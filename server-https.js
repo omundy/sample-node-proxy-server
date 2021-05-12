@@ -1,12 +1,12 @@
 /**
- *	Server HTTPS - Require and start running app as server - A version that runs HTTPS
+ *	Require and start running app as server - HTTPS version
  */
 
-// require main app and port (using destructuring)
-const [app, _port] = require('./app');
+// require main app
+const app = require('./app');
 
 // set port (required for heroku, which sets own port)
-const port = process.env.PORT || _port;
+const port = process.env.PORT || 3000;
 
 // HTTPS dependencies
 const https = require('https');
@@ -25,5 +25,5 @@ server.listen(port, () => {
 	console.log(`Example HTTPS app listening at https://localhost:${port}`);
 });
 
-// export app for heroku
+// export app (required for heroku)
 module.exports = app;

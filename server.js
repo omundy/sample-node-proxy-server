@@ -2,11 +2,11 @@
  *	Server - Require and start running app as server
  */
 
-// require main app and port (using destructuring)
-const [app, _port] = require('./app');
+// require main app
+const app = require('./app');
 
 // set port (required for heroku, which sets own port)
-const port = process.env.PORT || _port;
+const port = process.env.PORT || 3000;
 
 // start listening for requests
 app.listen(port, () => {
