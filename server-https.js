@@ -5,7 +5,7 @@
 // require main app
 const app = require('./app');
 
-// set port (required for heroku, which sets own port)
+// set port
 const port = process.env.PORT || 3000;
 
 // HTTPS dependencies
@@ -25,5 +25,5 @@ server.listen(port, () => {
 	console.log(`Example HTTPS app listening at https://localhost:${port}`);
 });
 
-// export app (required for heroku)
+// export app
 module.exports = app;

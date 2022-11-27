@@ -1,6 +1,6 @@
 /**
  *	CORS note: If you run this frontend JS ...
- * 	- on Heroku => both fetch() calls will succeed - neither will be a cross-origin request
+ * 	- on Remote Server => both fetch() calls will succeed - neither will be a cross-origin request
  * 	- on localhost => only #2 will succeed - #1 will be a different origin than localhost
  */
 
