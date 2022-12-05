@@ -8,6 +8,7 @@
 	"undef": true,
 	"unused": false,
 	"globals": {
-		"$": false
+		"$": false,
+		"fetch": true
 	}
 }

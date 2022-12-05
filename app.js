@@ -4,20 +4,23 @@
 
 // dependencies
 const express = require('express');
-const nodeFetch = require('node-fetch');
+const fetch = require('node-fetch');
 const path = require('path');
 const app = express();
 
 // set a whole project directory as public
 app.use(express.static('./public'));
 
-// test route
-app.get('/hello', (req, res) => {
+// test routes
+app.get('/', (req, res) => {
 	res.send("Hello world!");
+});
+app.get('/api', (req, res) => {
+	res.json({"message": "Hello world!"});
 });
 
 
-// the endpoints that are allowed
+// endpoints that are allowed
 // example: https://localhost:3000/proxy/test
 const endpoints = {
 	test: {
@@ -26,10 +29,6 @@ const endpoints = {
 	},
 	catfact: {
 		url: 'https://cat-fact.herokuapp.com/facts/random',
-		type: 'json'
-	},
-	satellites: {
-		url: 'https://api.n2yo.com/rest/v1/satellite/above/41.702/-76.014/0/90/ANY/&apiKey=XFR4Y5-ULWYWF-H64T3J-4OKO',
 		type: 'json'
 	}
 };
@@ -40,10 +39,10 @@ app.get('/proxy/:key?', (req, res) => {
 	console.log("req.params.key =", req.params.key);
 	if (!req.params || req.params == {} || !req.params.key || !endpoints[req.params.key]) return res.send("🙃");
 
-	nodeFetch(endpoints[req.params.key].url)
-		.then(apiResponse => {
-			// console.log("apiResponse =", apiResponse);
-			return apiResponse.text();
+	fetch(endpoints[req.params.key].url)
+		.then(response => {
+			// console.log("response =", response);
+			return response.text();
 		})
 		.then(text => {
 			// console.log("text =", text);
