@@ -9,7 +9,7 @@ const path = require('path');
 const app = express();
 
 // set a whole project directory as public
-app.use(express.static('./public'));
+// app.use(express.static('./public'));
 
 // test routes
 app.get('/', (req, res) => {
