@@ -30,6 +30,10 @@ const endpoints = {
 	catfact: {
 		url: 'https://cat-fact.herokuapp.com/facts/random',
 		type: 'json'
+	},
+	ipapi: {
+		url: 'http://ip-api.com/json/',
+		type: 'json'
 	}
 };
 
